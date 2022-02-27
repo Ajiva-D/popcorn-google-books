@@ -15,7 +15,7 @@ const BookLists = () => {
 		setSearch(e.target.value)
 	}
 	const getBooks = async (e)=>{
-		if(e.keyCode === 13 && search != ''){
+		if(e.keyCode === 13 && search !== ''){
 			setLoading(true)
 			setEmpty(false)
 		try {

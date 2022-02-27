@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState} from 'react'
 import BookItem from '../components/BookItem/BookItem';
 
 const ReadingLists = () => {
+	// eslint-disable-next-line no-unused-vars
 	const [readingList, setReadingList] = useState(JSON.parse(localStorage.getItem('readingList')) || [])
 	
 	
