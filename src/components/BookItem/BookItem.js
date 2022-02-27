@@ -1,8 +1,8 @@
 import React, { useState} from 'react'
 import './BookItem.css'
 
-const BookItem = ({id,title,author,publisher,cover}) => {
-const [isChecked, setIsChecked] = useState(false)
+const BookItem = ({id,title,author,publisher,cover,checked}) => {
+const [isChecked, setIsChecked] = useState(checked ? checked : false)
 const handleCheck= ()=>{
 	setIsChecked(!isChecked)
 	let book = {
