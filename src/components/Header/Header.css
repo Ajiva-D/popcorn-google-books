@@ -1,0 +1,33 @@
+header{
+	padding:15px;
+	border-bottom: 1px solid #d8d4d4;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	align-items: center;
+}
+h5{
+	font-size:1.5rem;
+	font-weight: 700;
+	margin: 0 5px;
+}
+.logo{
+	width:100px;
+}
+.reading-list{
+	position: absolute;
+	right: 0;
+	font-size: 1.125rem;
+	padding-right: 20px;
+	top:50%;
+	transform: translateY(-50%);
+}
+a{
+	text-decoration: none;
+}
+a:visited{
+	color: inherit;
+}
+.active-link{
+	text-decoration: underline;
+}
