@@ -1,22 +1,46 @@
-import React from 'react'
+import React, { useState} from 'react'
 import './BookItem.css'
 
-const BookItem = () => {
+const BookItem = ({id,title,author,publisher,cover}) => {
+const [isChecked, setIsChecked] = useState(false)
+const handleCheck= ()=>{
+	setIsChecked(!isChecked)
+	let book = {
+		title,
+		author,
+		cover,
+		id,
+	}
+	if(!localStorage.getItem('readingList')){
+		localStorage.setItem('readingList',JSON.stringify([]))
+	}
+	let readingList = JSON.parse(localStorage.getItem('readingList'));
+	console.log(readingList);
+	if(!isChecked){
+		readingList.push(book)
+		localStorage.setItem('readingList',JSON.stringify(readingList))
+	}else{
+		readingList = readingList.filter(function( book ) {
+			return book.id !== id;
+	});
+	localStorage.setItem('readingList',JSON.stringify(readingList))
+	}
+}
 	return (
 		<div className='book-item-con'>
-			<img src="https://books.google.com.ng/books/content?id=3BpOKfMbBowC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE7224tQOxf2MvzqKkSgxnGtkuli2QVIovajR1omZevJMOyj2KN1TVIpOUHvnpybH9pUMVRrEv4tSp4BNFscL37eEvVftNTO4w7GkjJvxpXtWpCVdEt_ZmdUnjrw_2MecIX-UBULe" alt="" />
+			<img src={cover} alt="" />
 			<div className='book-info'>
 				<div>
-					<p className='book-title'><span>Title: </span> The Lion, the Hare and the wardrobe</p>
-					<p><span>Author: </span> JK ROWLING</p>
-					<p><span>Publisher: </span> Macmillan</p>
+					<p className='book-title'><span>Title: </span> {title}</p>
+					<p><span>Author: </span> {author ? author.toString() : 'Not available'}</p>
+					<p><span>Publisher: </span> {publisher}</p>
 				</div>
 
 				<div>
-					<input id='one' type='checkbox' />
-					<label for='one'>
+					<input id={id} type='checkbox' checked={isChecked} onChange={handleCheck} />
+					<label htmlFor={id}>
 						<span></span>
-						Add to reading list
+					{isChecked ? 'Remove from' :	'Add to'} reading list
 					</label>
 				</div>
 			</div>

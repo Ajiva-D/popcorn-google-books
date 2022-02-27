@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Header.css'
-import {
-	BrowserRouter, Link, useMatch,
-	useResolvedPath
+import { Link, useMatch,
+	
 } from "react-router-dom";
 
 const Header = () => {
