@@ -40,7 +40,7 @@ const BookLists = () => {
 			<div className='book-list-con'>
 		
 		{	empty ? <p className='errorText'>No Books Available for that search!</p> : loading ? [...Array(5)].map((e, i) =>	<Skeleton/> ) :	
-		books.map((book) => <BookItem key={book.id} title={book?.volumeInfo?.title} author={book?.volumeInfo?.authors} cover={book?.volumeInfo?.imageLinks?.thumbnail} publisher={book?.volumeInfo?.publishedDate} id={book.id}/>)}
+		books.map((book) => <BookItem key={book.id} title={book?.volumeInfo?.title} author={book?.volumeInfo?.authors} cover={book?.volumeInfo?.imageLinks?.thumbnail} publisher={book?.volumeInfo?.publisher} id={book.id}/>)}
 		</div>
 	</div>
 	)

@@ -10,6 +10,7 @@ const handleCheck= ()=>{
 		author,
 		cover,
 		id,
+		publisher
 	}
 	if(!localStorage.getItem('readingList')){
 		localStorage.setItem('readingList',JSON.stringify([]))
@@ -33,7 +34,7 @@ const handleCheck= ()=>{
 				<div>
 					<p className='book-title'><span>Title: </span> {title}</p>
 					<p><span>Author: </span> {author ? author.toString() : 'Not available'}</p>
-					<p><span>Publisher: </span> {publisher}</p>
+					<p><span>Publisher: </span> {publisher || 'Not available'}</p>
 				</div>
 
 				<div>
