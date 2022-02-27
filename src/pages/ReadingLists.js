@@ -8,7 +8,7 @@ const ReadingLists = () => {
 	return (
 		<div>	
 			<div className='book-list-con'>
-			{	readingList.map((book) => <BookItem key={book.id} title={book?.title} author={book?.authors} cover={book?.cover} publisher={book?.publisher} id={book.id} checked={true}/>)}
+			{	!readingList || readingList.length < 1 ? <p className='errorText'>No Books Available in reading lists yet!</p> : readingList.map((book) => <BookItem key={book.id} title={book?.title} author={book?.authors} cover={book?.cover} publisher={book?.publisher} id={book.id} checked={true}/>)}
 		</div>
 	</div>
 	)
