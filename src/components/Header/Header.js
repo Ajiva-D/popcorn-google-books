@@ -15,7 +15,7 @@ const Header = () => {
 				<h5>Books</h5>
 			</Link>
 
-			<Link to="reading-lists">	<p className={`${isReadingLists ? 'active-link' : ''} reading-list`} >Reading List</p></Link>
+			<Link to="reading-lists" className='reading-list'>	<p className={`${isReadingLists ? 'active-link' : ''}`} >Reading List</p></Link>
 		</header>
 	)
 }
